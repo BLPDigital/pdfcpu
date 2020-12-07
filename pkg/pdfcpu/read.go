@@ -788,12 +788,6 @@ func scanLine(s *bufio.Scanner) (s1 string, err error) {
 		}
 	}
 
-	// Remove comment.
-	i := strings.Index(s1, "%")
-	if i >= 0 {
-		s1 = s1[:i]
-	}
-
 	return s1, nil
 }
 

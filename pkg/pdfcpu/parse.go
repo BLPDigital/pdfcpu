@@ -860,6 +860,10 @@ func parseObject(line *string) (Object, error) {
 			return nil, err
 		}
 
+	case '%': // comment
+		value = nil
+		l = "\n"
+
 	default:
 		var valStr string
 		var ok bool
