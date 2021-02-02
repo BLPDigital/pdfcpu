@@ -788,6 +788,12 @@ func scanLine(s *bufio.Scanner) (s1 string, err error) {
 		}
 	}
 
+	// remove lines that only contain a comment
+	trimmedStr := strings.Trim(s1, " ")
+	if strings.HasPrefix(trimmedStr, "%") {
+		return "", nil
+	}
+
 	return s1, nil
 }
 
